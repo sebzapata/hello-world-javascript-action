@@ -63,6 +63,9 @@ try {
         return [key, ...itemsToLookFor[key]].join(",");
       }),
     ].join("\n");
+    console.log("csv", csv);
+    console.log("csv stringy", JSON.stringify(csv));
+
     fs.writeFileSync(`${__dirname}/report.csv`, csv);
   }
 
