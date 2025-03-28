@@ -6,20 +6,7 @@ try {
   const exec = util.promisify(require("child_process").exec);
   const workingDirectory = "../app";
 
-  fs.readdir(".", function (err, files) {
-    //handling error
-    if (err) {
-      return console.log("Unable to scan directory: " + err);
-    }
-    //listing all files using forEach
-    files.forEach(function (file) {
-      // Do whatever you want to do with the file
-      console.log(file);
-    });
-  });
-
   console.log("starting the code");
-  console.log("");
 
   const prettyPrintDate = (d) =>
     [
@@ -63,6 +50,23 @@ try {
   }
 
   async function go() {
+    console.log("inside go");
+
+    console.log("start of file list");
+
+    fs.readdir(".", function (err, files) {
+      //handling error
+      if (err) {
+        return console.log("Unable to scan directory: " + err);
+      }
+      //listing all files using forEach
+      files.forEach(function (file) {
+        // Do whatever you want to do with the file
+        console.log(file);
+      });
+    });
+
+    console.log("end of the file list");
     process.chdir(workingDirectory);
     await exec("git reset --hard origin/master");
     await checkDates(new Date(startDate));
