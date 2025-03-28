@@ -5,7 +5,7 @@ const fs = require("fs");
 
 try {
   const exec = util.promisify(require("child_process").exec);
-  const workingDirectory = "app";
+  const workingDirectory = "../";
 
   console.log("starting the code");
 
