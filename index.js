@@ -23,7 +23,8 @@ try {
   //     newDate.setDate(date.getDate() + amountOfWeeksBetweenSamples * 7);
   //     return newDate;
   //   };
-  const dates = [];
+
+  const dates = [new Date()];
   const itemsToLookFor = {
     "bright-components": [],
     "@brighthr": [],
