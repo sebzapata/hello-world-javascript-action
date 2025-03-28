@@ -48,6 +48,7 @@ try {
   }
 
   async function go() {
+    console.log("process dir name", process.__dirname);
     process.chdir(workingDirectory);
     await exec("git reset --hard origin/master");
     await checkDates(new Date(startDate));
