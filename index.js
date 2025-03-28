@@ -69,9 +69,9 @@ try {
   async function checkDates(date) {
     console.log(`🗓 ${prettyPrintDate(date)}`);
     dates.push(date);
-    await exec(
-      `git checkout \`git rev-list -n 1 --first-parent --before="${date.toISOString()}" master\``
-    );
+    // await exec(
+    //   `git checkout \`git rev-list -n 1 --first-parent --before="${date.toISOString()}" master\``
+    // );
 
     await Promise.all(
       Object.keys(itemsToLookFor).map(async (key) => {
