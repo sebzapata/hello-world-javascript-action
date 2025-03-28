@@ -4,7 +4,10 @@ const fs = require("fs");
 
 try {
   const exec = util.promisify(require("child_process").exec);
-  const workingDirectory = "./app";
+  const workingDirectory = "../app";
+
+  console.log("starting the code");
+  console.log("");
 
   const prettyPrintDate = (d) =>
     [
@@ -48,7 +51,6 @@ try {
   }
 
   async function go() {
-    console.log("process", process);
     process.chdir(workingDirectory);
     await exec("git reset --hard origin/master");
     await checkDates(new Date(startDate));
