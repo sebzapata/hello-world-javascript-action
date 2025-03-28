@@ -6,7 +6,8 @@ const fs = require("fs");
 try {
   const exec = util.promisify(require("child_process").exec);
 
-  const workingDirectory = "../WebApp/app";
+  //   const workingDirectory = "../WebApp/app";
+  const workingDirectory = "../";
 
   const prettyPrintDate = (d) =>
     [
