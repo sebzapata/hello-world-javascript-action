@@ -46,6 +46,7 @@ try {
 
   async function go() {
     // process.chdir(workingDirectory);
+    console.log("dirname", __dirname);
 
     await checkDates(new Date());
     const csv = [
